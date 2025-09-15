@@ -1,0 +1,127 @@
+:root{
+  --bg: #f7f7fb;
+  --card: #ffffff;
+  --fg: #111827;
+  --muted: #6b7280;
+  --accent: #2563eb;
+  --radius: 12px;
+  --wrap: 1100px;
+  --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans", "Helvetica Neue", Arial;
+  background:var(--bg);
+  color:var(--fg);
+  line-height:1.6;
+}
+
+.wrap{
+  max-width: var(--wrap);
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Header */
+.site-header{
+  background: linear-gradient(90deg, #eef2ff, #fff);
+  border-bottom: 1px solid rgba(15, 23, 42, .04);
+  padding: 28px 0;
+}
+.site-header h1{
+  margin:0;
+  font-size: clamp(20px, 3vw, 28px);
+  text-align:center;
+}
+.subtitle{
+  text-align:center;
+  color:var(--muted);
+  margin-top:8px;
+  font-size:14px;
+}
+
+/* TOC */
+.toc{
+  background:var(--card);
+  margin:16px auto;
+  border-radius: var(--radius);
+  padding: 12px 16px;
+  border:1px solid rgba(15,23,42,0.06);
+}
+.toc ul{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px 18px;
+  padding:0;
+  margin:8px 0 0 0;
+  list-style:none;
+}
+.toc li{ margin:0; }
+.toc a{
+  color:var(--accent);
+  text-decoration:none;
+  font-weight:600;
+  font-size:14px;
+}
+.toc a:hover{text-decoration:underline;}
+
+/* Sections */
+.faq-section{
+  background:transparent;
+  margin-top: 20px;
+  padding-top: 8px;
+}
+.faq-section h2{
+  margin: 10px 0 14px 0;
+  font-size:18px;
+  color:#0f172a;
+  border-left:4px solid var(--accent);
+  padding-left:12px;
+  background:linear-gradient(90deg, rgba(37,99,235,0.03), transparent);
+  border-radius:8px;
+  padding:12px;
+}
+
+/* Details styling */
+details{
+  background: var(--card);
+  border: 1px solid rgba(15,23,42,0.04);
+  padding: 12px 16px;
+  margin-bottom:10px;
+  border-radius:8px;
+  box-shadow: 0 1px 2px rgba(15,23,42,0.02);
+}
+summary{
+  cursor:pointer;
+  font-weight:700;
+  color:var(--accent);
+  outline:none;
+  list-style:none;
+}
+details[open] summary{ color:#0b5ed7; }
+
+.answer{
+  margin-top:10px;
+  color:var(--fg);
+  font-size:15px;
+}
+.answer p{ margin:0 0 10px 0; }
+
+/* Footer */
+.site-footer{
+  margin-top:28px;
+  padding:18px 0;
+  background:transparent;
+  border-top:1px solid rgba(15,23,42,0.04);
+  color:var(--muted);
+  text-align:center;
+}
+
+/* Responsive */
+@media (max-width:720px){
+  .toc ul{ flex-direction:column; gap:8px; }
+  .wrap{ padding:14px; }
+  .faq-section h2{ font-size:16px; }
+}
